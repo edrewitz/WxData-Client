@@ -142,7 +142,32 @@ public class FileDownloader
 
         for (int i = 0; i < url_list.Count; i++)
         {
-            await DownloadFileAsync(url_list[i], paths[i]);
+            try
+            {
+                await DownloadFileAsync(url_list[i], paths[i]);
+            }
+            catch
+            {
+                try
+                {
+                    for (int r = 0; r < 5; r++)
+                    {
+                        
+                        Console.WriteLine($"Network Connection disrupted\nWaiting 30 seconds and reconnecting.\nRetries left: {5 - r}");
+                        Thread.Sleep(30000);
+                        await DownloadFileAsync(url_list[i], paths[i]);
+                        r = 0;
+                        break;
+                    }
+
+                }
+                catch
+                {
+                    Console.WriteLine("Cannot reconnect. Exiting....");
+                }
+                
+            }
+            
         }
 
     }
