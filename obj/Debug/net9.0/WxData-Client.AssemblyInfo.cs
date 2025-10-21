@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WxData-Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b61eacb3d3ca8c1c4f00102b17c23ad0210bb4d0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+68229b55c09c7c9676204e7ae9f44a71491ef486")]
 [assembly: System.Reflection.AssemblyProductAttribute("WxData-Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WxData-Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

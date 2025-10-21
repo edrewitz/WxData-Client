@@ -4,15 +4,8 @@ This script scans for the latest available ECMWF data and downloads it to your c
 (C) Eric J. Drewitz 2025
 */
 
-using System;
-using System.IO;
-using System.Net;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Net.NetworkInformation;
-using Microsoft.VisualBasic;
+
+using fileFunctions;
 
 
 public class FileDownloader
@@ -145,6 +138,8 @@ public class FileDownloader
             Console.WriteLine($"Folder '{displayPath}' already exists");
         }
 
+        clearFiles.Main(fullPath, displayPath);
+
         for (int i = 0; i < url_list.Count; i++)
         {
             try
@@ -157,7 +152,7 @@ public class FileDownloader
                 {
                     for (int r = 0; r < 5; r++)
                     {
-                        
+
                         Console.WriteLine($"Network Connection disrupted\nWaiting 30 seconds and reconnecting.\nRetries left: {5 - r}");
                         Thread.Sleep(30000);
                         await DownloadFileAsync(url_list[i], paths[i]);
@@ -170,16 +165,16 @@ public class FileDownloader
                 {
                     Console.WriteLine("Cannot reconnect. Exiting....");
                 }
-                
+
             }
-            
+
         }
     }
 
     public static async Task Main(string[] args)
     {
 
-       await downloadECMWFAIFS(24);
+        await downloadECMWFAIFS(24);
 
     }
 }
