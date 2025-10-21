@@ -140,7 +140,7 @@ namespace WxData_Client.ECMWF
             }
 
             string directoryPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
-            string folderName = $"SHARPkit/ECMWF/AIFS/";
+            string folderName = $"Weather Data/ECMWF/AIFS/";
             string displayFolderName = $@"SHARPkit\ECMWF\AIFS\";
             string fullPath = Path.Combine(directoryPath, folderName);
             string displayPath = Path.Combine(directoryPath, displayFolderName);
