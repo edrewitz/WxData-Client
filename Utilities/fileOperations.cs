@@ -5,15 +5,15 @@ This file hosts the functions that work with managing file directories.
 */
 
 
-namespace fileFunctions
+namespace WxData_Client.Utilities
 {
-    public static class clearFiles
+    public static class ClearFiles
     {
         /*
         This class clears the contents of a directory when downloading new data.
         */
 
-        public static void Main(string fullPath, string displayPath)
+        public static void DeleteFiles(string fullPath, string displayPath)
         {
             if (Directory.Exists(fullPath))
             {

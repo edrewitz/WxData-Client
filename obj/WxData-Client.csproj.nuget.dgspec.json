@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\drewi\\WxData-Client\\WxData-Client.csproj": {}
+    "C:\\Users\\drewi\\WxDataClient\\WxData-Client.csproj": {}
   },
   "projects": {
-    "C:\\Users\\drewi\\WxData-Client\\WxData-Client.csproj": {
+    "C:\\Users\\drewi\\WxDataClient\\WxData-Client.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\drewi\\WxData-Client\\WxData-Client.csproj",
+        "projectUniqueName": "C:\\Users\\drewi\\WxDataClient\\WxData-Client.csproj",
         "projectName": "WxData-Client",
-        "projectPath": "C:\\Users\\drewi\\WxData-Client\\WxData-Client.csproj",
+        "projectPath": "C:\\Users\\drewi\\WxDataClient\\WxData-Client.csproj",
         "packagesPath": "C:\\Users\\drewi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\drewi\\WxData-Client\\obj\\",
+        "outputPath": "C:\\Users\\drewi\\WxDataClient\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
