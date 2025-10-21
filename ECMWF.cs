@@ -69,7 +69,7 @@ public class FileDownloader
         }
     }
 
-    public static async Task Main(string[] args)
+    public static async Task downloadECMWFAIFS(int finalForecastHour)
     {
         /*
         In this section of code, we make our lists of URLs and fileNames. 
@@ -106,7 +106,7 @@ public class FileDownloader
 
         List<string> url_list = new List<string>();
 
-        for (int i = 0; i < 366; i += 6)
+        for (int i = 0; i < (finalForecastHour + 6); i += 6)
         {
             string u = $"https://data.ecmwf.int/forecasts/{time.ToString("yyyyMMdd")}/{run}z/aifs-single/0p25/oper/{time.ToString("yyyyMMdd")}{run}0000-{i}h-oper-fc.grib2";
 
@@ -115,29 +115,34 @@ public class FileDownloader
 
         List<string> file_list = new List<string>();
 
-        for (int i = 0; i < 366; i += 6)
+        for (int i = 0; i < (finalForecastHour + 6); i += 6)
         {
             string f = $"{time.ToString("yyyyMMdd")}{run}0000-{i}h-oper-fc.grib2";
 
             file_list.Add(f);
         }
 
+        string directoryPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+        string folderName = $"SHARPkit/ECMWF/AIFS/";
+        string displayFolderName = $@"SHARPkit\ECMWF\AIFS\";
+        string fullPath = Path.Combine(directoryPath, folderName);
+        string displayPath = Path.Combine(directoryPath, displayFolderName);
 
         List<string> paths = new List<string>();
         for (int i = 0; i < file_list.Count; i++)
         {
-            string path = $"ECMWF/AIFS/{file_list[i]}";
+            string path = $"{fullPath}{file_list[i]}";
             paths.Add(path);
         }
 
-        if (!Directory.Exists($"ECMWF/AIFS"))
+        if (!Directory.Exists($"{fullPath}"))
         {
-            Directory.CreateDirectory($"ECMWF/AIFS");
-            Console.WriteLine($"Folder 'ECMWF/AIFS' created");
+            Directory.CreateDirectory($"{fullPath}");
+            Console.WriteLine($"Folder {displayPath}' created");
         }
         else
         {
-            Console.WriteLine($"Folder 'ECMWF/AIFS' already exists");
+            Console.WriteLine($"Folder '{displayPath}' already exists");
         }
 
         for (int i = 0; i < url_list.Count; i++)
@@ -169,6 +174,12 @@ public class FileDownloader
             }
             
         }
+    }
+
+    public static async Task Main(string[] args)
+    {
+
+       await downloadECMWFAIFS(24);
 
     }
 }
