@@ -7,14 +7,10 @@
   "targets": {
     ".NETCoreApp,Version=v9.0": {
       "WxData-Client/1.0.0": {
-        "dependencies": {
-          "Grib.Api": "0.7.1"
-        },
         "runtime": {
           "WxData-Client.dll": {}
         }
-      },
-      "Grib.Api/0.7.1": {}
+      }
     }
   },
   "libraries": {
@@ -22,13 +18,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "Grib.Api/0.7.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-omNLCJQFTKkedAb17SC4ZjrdCwBIbAHOYBfs13PaLR6YAlNAskmGt9xaDSXf0fSQCun+XxeqkzwfdL8WIHm72w==",
-      "path": "grib.api/0.7.1",
-      "hashPath": "grib.api.0.7.1.nupkg.sha512"
     }
   }
 }
